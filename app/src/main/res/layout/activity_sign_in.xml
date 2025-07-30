@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignIn">
+    tools:context=".SignIn"
+    android:background="#4CAF50">
 
 
     <androidx.cardview.widget.CardView
@@ -76,7 +77,8 @@
             android:layout_marginLeft="15dp"
             android:elevation="10dp"
             android:text="OK"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:background="#4CAF50"/>
     </LinearLayout>
 
     <TextView

@@ -1,11 +1,13 @@
 package com.example.landcircle;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -27,9 +29,19 @@ public class HomePage extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+
         });
 
-        Toolbar toolbar = findViewById(R.id.toolbar); // Ensure R.id.toolbar exists in your layout
+        ImageButton sell = findViewById(R.id.add_btn);
+        sell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePage.this, Sellers.class);
+                startActivity(intent);
+            }
+        });
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Spinner roleSpinner = findViewById(R.id.role_spinner);
 
@@ -46,6 +58,20 @@ public class HomePage extends AppCompatActivity {
                 String selectedRole = parent.getItemAtPosition(position).toString();
                 // Use HomePage.this as the context for the Toast
                 Toast.makeText(HomePage.this, "Selected: " + selectedRole, Toast.LENGTH_SHORT).show();
+                switch (position) {
+                    case 0: // Lawyer
+                        Toast.makeText(getApplicationContext(), "Lawyer selected", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 1: // Surveyor
+                        Toast.makeText(getApplicationContext(), "Surveyor selected", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 2: // Valuer
+                        Toast.makeText(getApplicationContext(), "Valuer selected", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 3: // Buyer
+                        Toast.makeText(getApplicationContext(), "Buyer selected", Toast.LENGTH_SHORT).show();
+                        break;
+                }
             }
 
             @Override
@@ -54,6 +80,7 @@ public class HomePage extends AppCompatActivity {
         });
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -79,4 +106,6 @@ public class HomePage extends AppCompatActivity {
             return super.onOptionsItemSelected(item);
         }
     }
+
+
 }
