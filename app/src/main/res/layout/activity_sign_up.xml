@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignUp"
-    android:background="#4CAF50">
+    android:background="#F5F5DC">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/imageview"
@@ -40,6 +40,8 @@
         android:ems="10"
         android:hint="Enter email"
         android:textSize="18sp"
+        android:textColorHint="#2F4F4F"
+
         android:textAlignment="center"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +64,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnlayout"
         app:layout_constraintEnd_toEndOf="parent"
         android:hint="Password"
+        android:textColorHint="#2F4F4F"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/EmailAddress" />
@@ -83,6 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="OK"
+            android:backgroundTint="#228B22"
             android:textAlignment="center"
             android:textSize="18sp"
             android:elevation="10dp">
@@ -95,6 +99,7 @@
             android:text="DECLINE"
             android:textAlignment="center"
             android:textSize="18sp"
+            android:backgroundTint="#228B22"
             android:layout_marginLeft="20dp"
             android:elevation="10dp">
 

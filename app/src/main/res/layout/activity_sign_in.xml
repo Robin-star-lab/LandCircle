@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignIn"
-    android:background="#4CAF50">
+    android:background="#F5F5DC">
 
 
     <androidx.cardview.widget.CardView
@@ -42,6 +42,8 @@
         android:ems="10"
         android:inputType="numberPassword"
         android:hint="Enter password"
+
+        android:textColorHint="#2F4F4F"
         app:layout_constraintTop_toBottomOf="@+id/imageview"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="150dp"
@@ -68,7 +70,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Forgot password?"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+
+            android:textColor="#2F4F4F"/>
 
         <Button
             android:id="@+id/okbtn"
@@ -77,8 +81,8 @@
             android:layout_marginLeft="15dp"
             android:elevation="10dp"
             android:text="OK"
-            android:textAlignment="center"
-            android:background="#4CAF50"/>
+            android:backgroundTint="#228B22"
+            android:textAlignment="center" />
     </LinearLayout>
 
     <TextView
@@ -91,7 +95,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="1"
         app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/black"
+        android:textColor="#2F4F4F"
         android:textStyle="bold|italic"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

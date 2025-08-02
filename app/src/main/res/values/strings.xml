@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">LandCircle</string>
-    <string name="strings">Register as...</string>
+    <string name="strings">Register as</string>
     <string-array name="roles">
         <item>Lawyer</item>
         <item>Surveyor</item>
         <item>Valuer</item>
         <item>Physical planner</item>
-        <item>Seller</item>
+        <item>Chief</item>
     </string-array>
 </resources>

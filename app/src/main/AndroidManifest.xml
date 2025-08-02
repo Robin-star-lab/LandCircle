@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LandCircle">
         <activity
-            android:name=".Professionals"
+            android:name=".ChatActivity"
             android:exported="false" />
         <activity
-            android:name=".Sellers"
+            android:name=".SellerInput"
             android:exported="false" />
         <activity
             android:name=".HomePage"

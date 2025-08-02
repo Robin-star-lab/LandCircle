@@ -6,8 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#4CAF50">
+    android:background="#F5F5DC">
 
+    <!--#4caf50-->
     <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,7 +57,7 @@
             android:textAlignment="center"
             android:textSize="48sp"
             android:textFontWeight="700"
-            android:textColor="#000000"
+            android:textColor="#FFD700"
             android:textStyle="bold"
             android:layout_marginTop="8dp" />
 
@@ -66,7 +67,7 @@
             android:layout_height="wrap_content"
             android:text="A community of land owners  &amp; professionals"
             android:textAlignment="center"
-            android:textColor="#000000"
+            android:textColor="#2F4F4F"
             android:textStyle="bold"
             android:textFontWeight="700"
             android:textSize="18sp"
@@ -80,6 +81,7 @@
         android:textSize="12sp"
         android:padding="10dp"
         android:elevation="12dp"
+        android:backgroundTint="#228B22"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

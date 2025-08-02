@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -20,6 +21,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class HomePage extends AppCompatActivity {
 
+    Spinner spinner;
+    ImageButton add_btn;
+    LinearLayout lawyerForm, surveyorForm, valuerForm,physicalPlanerForm,chiefForm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,53 +35,79 @@ public class HomePage extends AppCompatActivity {
             return insets;
 
         });
-
-        ImageButton sell = findViewById(R.id.add_btn);
-        sell.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomePage.this, Sellers.class);
+        add_btn = findViewById(R.id.add_btn);
+        if (add_btn != null) {
+            add_btn.setOnClickListener(v -> {
+                Intent intent = new Intent(HomePage.this, SellerInput.class);
                 startActivity(intent);
-            }
-        });
+                // Apply enter animation for new activity and exit animation for current activity
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            });
+        }
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        Spinner roleSpinner = findViewById(R.id.role_spinner);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.roles, android.R.layout.simple_spinner_item);
+        spinner = findViewById(R.id.role_spinner);
+        lawyerForm = findViewById(R.id.lawyerForm);
+        surveyorForm = findViewById(R.id.surveyorForm);
+        valuerForm = findViewById(R.id.valuerForm);
+        physicalPlanerForm = findViewById(R.id.physicalPlannerForm);
+        chiefForm = findViewById(R.id.chiefForm);
 
+        String[] roles = {"Register as a", "Lawyer", "Surveyor", "Valuer","Physical Planner","Chief"};
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, roles);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        roleSpinner.setAdapter(adapter);
+        spinner.setAdapter(adapter);
 
-        //Handle selection
-        roleSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedRole = parent.getItemAtPosition(position).toString();
-                // Use HomePage.this as the context for the Toast
-                Toast.makeText(HomePage.this, "Selected: " + selectedRole, Toast.LENGTH_SHORT).show();
+                // Hide all forms initially
+                lawyerForm.setVisibility(View.GONE);
+                surveyorForm.setVisibility(View.GONE);
+                valuerForm.setVisibility(View.GONE);
+                physicalPlanerForm.setVisibility(View.GONE);
+                chiefForm.setVisibility(View.GONE);
+
+                // Show form based on selection
                 switch (position) {
-                    case 0: // Lawyer
-                        Toast.makeText(getApplicationContext(), "Lawyer selected", Toast.LENGTH_SHORT).show();
+                    case 1: // Lawyer
+                        lawyerForm.setVisibility(View.VISIBLE);
                         break;
-                    case 1: // Surveyor
-                        Toast.makeText(getApplicationContext(), "Surveyor selected", Toast.LENGTH_SHORT).show();
+                    case 2: // Surveyor
+                        surveyorForm.setVisibility(View.VISIBLE);
                         break;
-                    case 2: // Valuer
-                        Toast.makeText(getApplicationContext(), "Valuer selected", Toast.LENGTH_SHORT).show();
+                    case 3: // Valuer
+                        valuerForm.setVisibility(View.VISIBLE);
                         break;
-                    case 3: // Buyer
-                        Toast.makeText(getApplicationContext(), "Buyer selected", Toast.LENGTH_SHORT).show();
+                    case 4: // Valuer
+                        physicalPlanerForm.setVisibility(View.VISIBLE);
+                        break;
+                    case 5: // Valuer
+                        chiefForm.setVisibility(View.VISIBLE);
                         break;
                 }
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
+            public void onNothingSelected(AdapterView<?> parent) { }
         });
+
+
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+
+        /*ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.roles, android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);*/
+
+        //Handle selection
+
 
     }
 
@@ -106,6 +136,9 @@ public class HomePage extends AppCompatActivity {
             return super.onOptionsItemSelected(item);
         }
     }
+
+
+
 
 
 }
