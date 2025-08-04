@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -23,6 +24,7 @@ public class HomePage extends AppCompatActivity {
 
     Spinner spinner;
     ImageButton add_btn;
+    Button legal_ai;
     LinearLayout lawyerForm, surveyorForm, valuerForm,physicalPlanerForm,chiefForm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,15 @@ public class HomePage extends AppCompatActivity {
             });
         }
 
-
+        legal_ai = findViewById(R.id.legal_ai);
+        if (legal_ai != null) {
+            legal_ai.setOnClickListener(v -> {
+                Intent intent = new Intent(HomePage.this, ChatActivity.class);
+                startActivity(intent);
+                // Apply enter animation for new activity and exit animation for current activity
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            });
+        }
         spinner = findViewById(R.id.role_spinner);
         lawyerForm = findViewById(R.id.lawyerForm);
         surveyorForm = findViewById(R.id.surveyorForm);
