@@ -1,5 +1,7 @@
 package com.example.landcircle;
 import com.example.landcircle.models.User;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText; // Import EditText
@@ -30,6 +32,7 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_sign_up);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -48,10 +51,12 @@ public class SignUp extends AppCompatActivity {
                 String email = emailEditText.getText().toString().trim();
                 String password_hash = passwordEditText.getText().toString().trim();
 
+
                 if (email.isEmpty() || password_hash.isEmpty()) {
                     Toast.makeText(SignUp.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
 
                 User user = new User(email, password_hash);
                 signupUser(user);
@@ -63,16 +68,27 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(SignUp.this, "Signup successful!", Toast.LENGTH_SHORT).show();
+
+                    // Save email in SharedPreferences after signup
+                    SharedPreferences prefs = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("email", user.getEmail());   // save the email
+                    editor.apply();
+
                     Intent i = new Intent(SignUp.this,SignIn.class);
+
                     startActivity(i);
+
+
+                    Toast.makeText(SignUp.this, "Signup successful!", Toast.LENGTH_SHORT).show();
+
                 } else {
                     Toast.makeText(SignUp.this, "Signup failed: " + response.code(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<Void> call, Throwable t) {
+            public void onFailure(Call<Void> call, Throwable t) { // Changed Call<Void> to Call<SignInResponse>
                 Toast.makeText(SignUp.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
