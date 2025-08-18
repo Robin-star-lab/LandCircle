@@ -59,11 +59,6 @@ public class HomePage extends AppCompatActivity {
             });
         }
         spinner = findViewById(R.id.role_spinner);
-        lawyerForm = findViewById(R.id.lawyerForm);
-        surveyorForm = findViewById(R.id.surveyorForm);
-        valuerForm = findViewById(R.id.valuerForm);
-        physicalPlanerForm = findViewById(R.id.physicalPlannerForm);
-        chiefForm = findViewById(R.id.chiefForm);
 
         String[] roles = {"Register as a", "Lawyer", "Surveyor", "Valuer","Physical Planner","Chief"};
 
@@ -75,30 +70,35 @@ public class HomePage extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // Hide all forms initially
-                lawyerForm.setVisibility(View.GONE);
-                surveyorForm.setVisibility(View.GONE);
-                valuerForm.setVisibility(View.GONE);
-                physicalPlanerForm.setVisibility(View.GONE);
-                chiefForm.setVisibility(View.GONE);
 
-                // Show form based on selection
+                Intent intent = null;
+
                 switch (position) {
+                    case 0: // "Register as a" - do nothing or show a Toast
+                        Toast.makeText(HomePage.this, "Please select a role to register.", Toast.LENGTH_SHORT).show();
+                        break;
                     case 1: // Lawyer
-                        lawyerForm.setVisibility(View.VISIBLE);
+                        intent = new Intent(HomePage.this, Lawyers.class);
                         break;
                     case 2: // Surveyor
-                        surveyorForm.setVisibility(View.VISIBLE);
+                        intent = new Intent(HomePage.this, Surveyors.class);
                         break;
                     case 3: // Valuer
-                        valuerForm.setVisibility(View.VISIBLE);
+                        intent = new Intent(HomePage.this, Valuers.class);
                         break;
-                    case 4: // Valuer
-                        physicalPlanerForm.setVisibility(View.VISIBLE);
+                    case 4: // Physical Planner
+                        intent = new Intent(HomePage.this, Planners.class);
                         break;
-                    case 5: // Valuer
-                        chiefForm.setVisibility(View.VISIBLE);
+                    case 5: // Chief
+                        intent = new Intent(HomePage.this, Chief.class);
                         break;
+                }
+
+                if (intent != null) {
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
+
                 }
             }
 

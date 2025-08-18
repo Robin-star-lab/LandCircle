@@ -15,6 +15,21 @@
         android:theme="@style/Theme.LandCircle"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Chief"
+            android:exported="false" />
+        <activity
+            android:name=".Planners"
+            android:exported="false" />
+        <activity
+            android:name=".Valuers"
+            android:exported="false" />
+        <activity
+            android:name=".Surveyors"
+            android:exported="false" />
+        <activity
+            android:name=".Lawyers"
+            android:exported="false" />
+        <activity
             android:name=".SignUp"
             android:exported="false" />
         <activity
