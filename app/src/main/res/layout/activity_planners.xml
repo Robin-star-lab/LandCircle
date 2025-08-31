@@ -44,6 +44,7 @@
         app:cardElevation="8dp"
         app:cardUseCompatPadding="true">
 
+        <!-- planners form -->
         <LinearLayout
             android:id="@+id/physicalPlannerForm"
             android:layout_width="wrap_content"
@@ -55,6 +56,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintVertical_bias="0.5">
 
+            <!-- first_name-->
             <LinearLayout
                 android:id="@+id/first_name_planner"
                 android:layout_width="wrap_content"
@@ -77,10 +79,12 @@
                     android:layout_marginLeft="10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/first_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
+
             <!-- Second name -->
             <LinearLayout
                 android:id="@+id/second_name_planner"
@@ -104,6 +108,7 @@
                     android:layout_marginLeft="10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/second_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -131,6 +136,7 @@
                     android:layout_marginLeft="10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phone_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:digits="0123456789"
@@ -164,6 +170,7 @@
                     android:layout_marginLeft="10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/national_id"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:digits="0123456789"
@@ -172,7 +179,8 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
-            <!-- PPRB no-->
+
+            <!-- Physical address number-->
             <LinearLayout
                 android:id="@+id/pprb_no"
                 android:layout_width="wrap_content"
@@ -182,7 +190,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="PPRB No:"
+                    android:text="Physical Address No(location):"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -193,13 +201,14 @@
                     android:layout_marginLeft="10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/physical_address_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textVisiblePassword" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
-            <!-- Location -->
+            <!-- postal address -->
             <LinearLayout
                 android:id="@+id/title_no"
                 android:layout_width="wrap_content"
@@ -209,7 +218,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Location:"
+                    android:text="Postal Address:"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -220,21 +229,102 @@
                     android:layout_marginLeft="10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/postal_address_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textVisiblePassword" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
+
+            <!-- pprb reg number -->
+            <LinearLayout
+                android:id="@+id/title_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PPRB registration No:"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pprb_reg_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textVisiblePassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- company/business name -->
+            <LinearLayout
+                android:id="@+id/title_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Company/Business name(if any):"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/business_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textVisiblePassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- profile photo-->
+            <LinearLayout
+                android:id="@+id/LSB_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile photo(optional):"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPickImage"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:text="Upload"
+                    android:textColor="@android:color/black"
+                    app:backgroundTint="@color/beige"
+                    app:cornerRadius="48dp"
+                    style="@style/Widget.MaterialComponents.Button" />
+
+            </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-
-
-
-
-
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/submit"
+        android:text="SUBMIT"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@color/holo_green_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintVertical_bias="1"
@@ -243,9 +333,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/card"
-        android:text="SUBMIT"
-        android:backgroundTint="#228B22"
-        android:elevation="16dp">
-    </Button>
+        app:cornerRadius="48dp"
+        style="@style/Widget.MaterialComponents.Button" />
+
+
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

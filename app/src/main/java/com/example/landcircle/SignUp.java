@@ -88,7 +88,7 @@ public class SignUp extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Void> call, Throwable t) { // Changed Call<Void> to Call<SignInResponse>
+            public void onFailure(Call<Void> call, Throwable t) {
                 Toast.makeText(SignUp.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

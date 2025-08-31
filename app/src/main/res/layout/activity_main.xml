@@ -85,21 +85,26 @@
             android:textSize="14sp"
             android:layout_marginTop="40dp"/>
     </LinearLayout>
-    <Button
+
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/getstarted"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Get Started"
         android:textSize="12sp"
         android:padding="10dp"
-        android:elevation="12dp"
-        android:backgroundTint="#228B22"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@color/holo_green_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/landcircle"
         app:layout_constraintVertical_bias="0.8"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="24dp"
+        style="@style/Widget.MaterialComponents.Button" />
+
+
 
 
 

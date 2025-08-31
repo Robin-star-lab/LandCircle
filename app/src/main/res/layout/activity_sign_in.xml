@@ -19,8 +19,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/Password"
+        android:layout_marginTop="75dp"
+        app:layout_constraintBottom_toTopOf="@+id/Sign_in"
         app:layout_constraintHorizontal_bias="0.5">
 
         <ImageView
@@ -35,6 +35,22 @@
 
     </androidx.cardview.widget.CardView>
 
+
+    <TextView
+        android:id="@+id/Sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign in"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="35dp"
+        android:textColor="#2F4F4F"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/imageview"
+        app:layout_constraintBottom_toTopOf="@+id/Password"/>
+
     <EditText
         android:id="@+id/Password"
         android:layout_width="wrap_content"
@@ -44,18 +60,20 @@
         android:hint="Enter password"
 
         android:textColorHint="#2F4F4F"
-        app:layout_constraintTop_toBottomOf="@+id/imageview"
+        app:layout_constraintTop_toBottomOf="@+id/Sign_in"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="45dp"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"/>
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintBottom_toTopOf="@+id/validation" />
 
     <LinearLayout
         android:id="@+id/validation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="300dp"
+        android:layout_marginTop="10dp"
 
         android:orientation="horizontal"
         android:padding="20dp"
@@ -74,15 +92,21 @@
 
             android:textColor="#2F4F4F"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/okbtn"
+            android:text="OK"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@color/holo_green_light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:elevation="10dp"
-            android:text="OK"
-            android:backgroundTint="#228B22"
-            android:textAlignment="center" />
+
+            style="@style/Widget.MaterialComponents.Button" />
+
+
+
     </LinearLayout>
 
     <TextView

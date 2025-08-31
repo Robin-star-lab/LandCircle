@@ -26,6 +26,7 @@
         app:layout_constraintVertical_bias="0"
         app:layout_constraintBottom_toTopOf="@+id/card"/>
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
         android:layout_width="wrap_content"
@@ -44,21 +45,21 @@
         app:cardElevation="8dp"
         app:cardUseCompatPadding="true">
 
-        <!-- chief form -->
         <LinearLayout
-            android:id="@+id/chiefForm"
+            android:id="@+id/lawyerForm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-
             android:orientation="vertical"
-            android:background="@color/white"
+
+            android:elevation="18dp"
 
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintVertical_bias="0.5">
+            app:layout_constraintVertical_bias="0.5"
+            android:background="@color/white">
 
+            <!--first_name-->
             <LinearLayout
-                android:id="@+id/first_name_valuer"
+                android:id="@+id/first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -79,13 +80,14 @@
                     android:layout_marginLeft="10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/first_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
             <!-- Second name -->
             <LinearLayout
-                android:id="@+id/second_name_valuer"
+                android:id="@+id/second"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -106,15 +108,16 @@
                     android:layout_marginLeft="10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/second_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
 
-            <!-- phone no-->
+            <!--phone no-->
             <LinearLayout
-                android:id="@+id/phone_no_valuer"
+                android:id="@+id/phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -133,6 +136,7 @@
                     android:layout_marginLeft="10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phone_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:digits="0123456789"
@@ -143,7 +147,7 @@
 
             <!-- National id-->
             <LinearLayout
-                android:id="@+id/id_no_valuer"
+                android:id="@+id/id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -157,11 +161,13 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/national_id"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:digits="0123456789"
@@ -170,9 +176,10 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
-            <!-- VRB no-->
+
+            <!-- personal file no -->
             <LinearLayout
-                android:id="@+id/VRB_no"
+                android:id="@+id/roll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -180,7 +187,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="VRB No:"
+                    android:text="Personal file No:"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -191,14 +198,16 @@
                     android:layout_marginLeft="10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/personal_file_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textVisiblePassword" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
-            <!-- certificate no-->
+
+            <!-- stamp sample -->
             <LinearLayout
-                android:id="@+id/cert_no"
+                android:id="@+id/cert"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -206,7 +215,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Certificate No:"
+                    android:text="Stamp sample:"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -217,14 +226,16 @@
                     android:layout_marginLeft="10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/stamp_sample"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textVisiblePassword" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
-            <!-- Location -->
+
+            <!-- Postal address -->
             <LinearLayout
-                android:id="@+id/location"
+                android:id="@+id/P105"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -232,7 +243,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Location:"
+                    android:text="Postal Address:"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -243,19 +254,75 @@
                     android:layout_marginLeft="10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/postal_address_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textVisiblePassword" />
                 </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Sublocation name -->
+            <LinearLayout
+                android:id="@+id/P105"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sublocation name"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/sublocation_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textVisiblePassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- profile photo-->
+            <LinearLayout
+                android:id="@+id/LSB_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile photo(optional):"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPickImage"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:text="Upload"
+                    android:textColor="@android:color/black"
+                    app:backgroundTint="@color/beige"
+                    app:cornerRadius="48dp"
+                    style="@style/Widget.MaterialComponents.Button" />
+
             </LinearLayout>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
-
-
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/submit"
+        android:text="SUBMIT"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@color/holo_green_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintVertical_bias="1"
@@ -264,10 +331,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/card"
-        android:text="SUBMIT"
-        android:backgroundTint="#228B22"
-        android:elevation="16dp">
-    </Button>
-
-
+        app:cornerRadius="48dp"
+        style="@style/Widget.MaterialComponents.Button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

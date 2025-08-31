@@ -1,5 +1,6 @@
 package com.example.landcircle;
 
+import static android.content.Context.MODE_PRIVATE;
 import com.example.landcircle.models.SignInRequest;
 import com.example.landcircle.models.User;
 import com.example.landcircle.models.LogInResponse;
@@ -32,7 +33,7 @@ public class SignIn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
         String email = getIntent().getStringExtra("email");
-        Toast.makeText(this, "Welcome " + email, Toast.LENGTH_LONG).show();
+        Toast.makeText(SignIn.this, "Welcome " + email, Toast.LENGTH_LONG).show();
 
 
         passwordEditText = findViewById(R.id.Password);
@@ -44,23 +45,25 @@ public class SignIn extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 signInUser();
+
             }
         });
     }
     private void signInUser() {
         String enteredPassword = passwordEditText.getText().toString().trim();
         // Fetch email stored during signup
+
         SharedPreferences prefs = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
         String email = prefs.getString("email", null);
 
 
         if (enteredPassword.isEmpty()) {
-            Toast.makeText(this, "Password is required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SignIn.this, "Password is required", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (email == null) {
-            Toast.makeText(this, "No email found", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SignIn.this, "No email found", Toast.LENGTH_SHORT).show();
         }
 
         // Create request with email + password
@@ -71,6 +74,13 @@ public class SignIn extends AppCompatActivity {
             public void onResponse(Call<LogInResponse> call, Response<LogInResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     // ✅ Navigate to HomePageActivity
+
+                    // Extract token
+                    SharedPreferences prefs = getSharedPreferences("MyApp", MODE_PRIVATE);
+                    prefs.edit().putString("accessToken", response.body().getAccessToken()).apply();
+
+
+
                     Intent intent = new Intent(SignIn.this, HomePage.class);
                     startActivity(intent);
                     //intent.putExtra("userId", response.body().getUserId());
