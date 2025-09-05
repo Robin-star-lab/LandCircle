@@ -5,8 +5,8 @@ public class ValuerRequest {
     private  String second_name;
     private String phone_number;
     private String national_id;
-    private String vrb_reg_number;
-    private String isk_membership_number;
+    private String vrb_number;
+    private String isk_membership;
     private String physical_address;
     private String postal_address;
 
@@ -14,16 +14,16 @@ public class ValuerRequest {
                          String second_name,
                          String phone_number,
                          String national_id,
-                         String vrb_reg_number,
-                         String isk_membership_number,
+                         String vrb_number,
+                         String isk_membership,
                          String physical_address,
                          String postal_address) {
         this.first_name = first_name;
         this.second_name = second_name;
         this.phone_number = phone_number;
         this.national_id = national_id;
-        this.vrb_reg_number = vrb_reg_number;
-        this.isk_membership_number = isk_membership_number;
+        this.vrb_number = vrb_number;
+        this.isk_membership = isk_membership;
         this.physical_address = physical_address;
         this.postal_address = postal_address;
     }
@@ -45,11 +45,11 @@ public class ValuerRequest {
     }
 
     public String getVrb_reg_number() {
-        return vrb_reg_number;
+        return vrb_number;
     }
 
     public String getIsk_membership_number() {
-        return isk_membership_number;
+        return isk_membership;
     }
 
     public String getPhysical_address() {

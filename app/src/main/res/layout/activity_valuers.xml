@@ -233,7 +233,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
-            <!-- Location/Physical adddress -->
+            <!-- Location/Physical address -->
             <LinearLayout
                 android:id="@+id/location"
                 android:layout_width="wrap_content"

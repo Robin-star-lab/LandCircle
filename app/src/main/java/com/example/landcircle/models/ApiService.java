@@ -38,10 +38,10 @@ public interface ApiService {
             @Part("second_name") RequestBody secondName,
             @Part("phone_number") RequestBody phone,
             @Part("national_id") RequestBody nationalId,
-            @Part("practice_number") RequestBody personalFile,
-            @Part("work_place") RequestBody stampSample,
-            @Part("physical_address") RequestBody postalAddress,
-            @Part("postal_address") RequestBody sublocationName,
+            @Part("personal_file_number") RequestBody personalFile,
+            @Part("stamp_sample") RequestBody stampSample,
+            @Part("postal_address") RequestBody postalAddress,
+            @Part("sublocation_name") RequestBody sublocationName,
             @Part MultipartBody.Part profile_photo
     );
     @Multipart
@@ -53,8 +53,8 @@ public interface ApiService {
             @Part("phone_number") RequestBody phoneNumber,
             @Part("national_id") RequestBody nationalId,
             @Part("physical_address_number") RequestBody physicalAddress,
-            @Part("postal_address_number") RequestBody postalAddress,
-            @Part("pprb_reg_number") RequestBody pprb,
+            @Part("postal_address") RequestBody postalAddress,
+            @Part("pprb_reggistration") RequestBody pprb,
             @Part("business_name") RequestBody businessName,
             @Part MultipartBody.Part profile_photo
     );
@@ -66,15 +66,27 @@ public interface ApiService {
             @Part("second_name") RequestBody secondName,
             @Part("phone_number") RequestBody phoneNumber,
             @Part("national_id") RequestBody nationalId,
-            @Part("postal_address_number") RequestBody postalAddress,
-            @Part("physical_address_number") RequestBody physicalAddress,
-            @Part("lsb_reg_number") RequestBody lsbRegNumber,
-            @Part("isk_membership_number") RequestBody iskMembershipNumber,
+            @Part("postal_address") RequestBody postalAddress,
+            @Part("physical_address") RequestBody physicalAddress,
+            @Part("lsb_reg_no") RequestBody lsbRegNumber,
+            @Part("isk_membership") RequestBody iskMembershipNumber,
             @Part MultipartBody.Part profile_photo
     );
-    @POST("/valuers")
-    Call<Void> valuersIn(@Header("Authorization") String token,@Body ValuerRequest valuer);
 
+    @Multipart
+    @POST("/valuers")
+    Call<Void> registerValuer(
+            @Header("Authorization") String token,
+            @Part("first_name") RequestBody firstName,
+            @Part("second_name") RequestBody secondName,
+            @Part("phone_number") RequestBody phone,
+            @Part("national_id") RequestBody nationalId,
+            @Part("vrb_number") RequestBody vrbNumber,
+            @Part("isk_membership") RequestBody iskMembershipNumber,
+            @Part("physical_address") RequestBody physicalAddress,
+            @Part("postal_address") RequestBody postalAddress,
+            @Part MultipartBody.Part profile_photo
+    );
 
 
 

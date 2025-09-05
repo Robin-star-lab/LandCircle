@@ -7,8 +7,8 @@ public class PlannerRequest {
     private String phone_number;
     private String national_id;
     private String physical_address_number;
-    private String postal_address_number;
-    private String pprb_reg_number;
+    private String postal_address;
+    private String pprb_reggistration;
     private String business_name;
 
     public PlannerRequest(String first_name,
@@ -16,16 +16,16 @@ public class PlannerRequest {
                           String phone_number,
                           String national_id,
                           String physical_address_number,
-                          String postal_address_number,
-                          String pprb_reg_number,
+                          String postal_address,
+                          String pprb_reggistration,
                           String business_name) {
         this.first_name = first_name;
         this.second_name = second_name;
         this.phone_number = phone_number;
         this.national_id = national_id;
         this.physical_address_number = physical_address_number;
-        this.postal_address_number = postal_address_number;
-        this.pprb_reg_number = pprb_reg_number;
+        this.postal_address = postal_address;
+        this.pprb_reggistration = pprb_reggistration;
         this.business_name = business_name;
     }
 
@@ -50,11 +50,11 @@ public class PlannerRequest {
     }
 
     public String getPostal_address_number() {
-        return postal_address_number;
+        return postal_address;
     }
 
     public String getPprb_reg_number() {
-        return pprb_reg_number;
+        return pprb_reggistration;
     }
 
     public String getBusiness_name() {

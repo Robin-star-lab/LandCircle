@@ -6,29 +6,29 @@ public class SurveyorRequest {
     private String second_name;
     private String phone_number;
     private String national_id;
-    private String postal_address_number;
-    private String physical_address_number;
-    private String lsb_reg_number;
-    private String isk_membership_number;
+    private String postal_address;
+    private String physical_address;
+    private String lsb_reg_no;
+    private String isk_membership;
     private String profile_photo;
 
     public SurveyorRequest(String first_name,
                            String second_name,
                            String phone_number,
                            String national_id,
-                           String postal_address_number,
-                           String physical_address_number,
-                           String lsb_reg_number,
-                           String isk_membership_number,
+                           String postal_address,
+                           String physical_address,
+                           String lsb_reg_no,
+                           String isk_membership,
                            String profile_photo) {
         this.first_name = first_name;
         this.second_name = second_name;
         this.phone_number = phone_number;
         this.national_id = national_id;
-        this.postal_address_number = postal_address_number;
-        this.physical_address_number = physical_address_number;
-        this.lsb_reg_number = lsb_reg_number;
-        this.isk_membership_number = isk_membership_number;
+        this.postal_address = postal_address;
+        this.physical_address = physical_address;
+        this.lsb_reg_no = lsb_reg_no;
+        this.isk_membership = isk_membership;
         this.profile_photo = profile_photo;
     }
 
@@ -49,19 +49,19 @@ public class SurveyorRequest {
     }
 
     public String getPostal_address_number() {
-        return postal_address_number;
+        return postal_address;
     }
 
     public String getPhysical_address_number() {
-        return physical_address_number;
+        return physical_address;
     }
 
     public String getLsb_reg_number() {
-        return lsb_reg_number;
+        return lsb_reg_no;
     }
 
     public String getIsk_membership_number() {
-        return isk_membership_number;
+        return isk_membership;
     }
 
     public String getProfile_photo() {

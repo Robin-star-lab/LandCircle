@@ -44,6 +44,7 @@
         app:cardElevation="8dp"
         app:cardUseCompatPadding="true">
 
+        <!--lawyer form -->
         <LinearLayout
             android:id="@+id/lawyerForm"
             android:layout_width="wrap_content"
@@ -62,6 +63,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="First Name:"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
 
                 <!-- Label -->
                 <TextView
